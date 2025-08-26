@@ -1,0 +1,437 @@
+{% extends "base.html" %}
+{% load static %}
+
+	{% block title %}طراحان شاپ{% endblock %}
+
+	{% block content %}
+		<!-- mainCarousel -->
+			<div class="w-full relative">
+				<!-- Swiper -->
+				  <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="30"
+				    centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
+				    <swiper-slide>
+				    	<img src="{% static 'img/slider01.webp' %}" class="w-full" />
+				    </swiper-slide>
+				    <swiper-slide>
+				    	<img src="{% static 'img/slider02.webp' %}" class="w-full" />
+				    </swiper-slide>
+				    <swiper-slide>
+				    	<img src="{% static 'img/slider03.webp' %}" class="w-full" />
+				    </swiper-slide>
+				    <div class="autoplay-progress" slot="container-end">
+				      <svg viewBox="0 0 48 48">
+				        <circle cx="24" cy="24" r="20"></circle>
+				      </svg>
+				      <span></span>
+				    </div>
+				  </swiper-container>
+
+				  <!-- Swiper JS -->
+				  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+				  <!-- Initialize Swiper -->
+				  <script>
+				    const progressCircle = document.querySelector(".autoplay-progress svg");
+				    const progressContent = document.querySelector(".autoplay-progress span");
+
+				    const swiperEl = document.querySelector("swiper-container");
+				    swiperEl.addEventListener("autoplaytimeleft", (e) => {
+				      const [swiper, time, progress] = e.detail;
+				      progressCircle.style.setProperty("--progress", 1 - progress);
+				      progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+				    });
+				  </script>
+				<!-- /Swiper -->
+			</div>
+			
+			<!-- Initialize Swiper -->
+			
+		<!-- /mainCarousel -->
+
+		<!-- topProduct -->
+			<section class="my-10 px-2">
+			  <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 bg-gradient-to-tr from-red-500 to-red-800 py-5 px-2">
+			    <!-- ستون اول: فروش شگفت انگیز -->
+			    <div class="flex flex-col justify-center items-center bg-gradient-to-tr from-red-500 to-red-800 text-white p-6 rounded">
+			      <h2 class="text-2xl font-bold mb-2">فروش شگفت انگیز</h2>
+			      <p class="text-center">تخفیف‌های ویژه امروز!</p>
+			      <img src="{% static 'img/per.png' %}" alt="فروش شگفت انگیز" class="mt-4 rounded">
+			    </div>
+
+			    <!-- کارت محصولات: ستون 2 تا 5 -->
+			    <div class="card bg-base-100 shadow-md p-1 rounded">
+			      <figure>
+			        <img src="{% static 'img/canon-printer.webp' %}" alt="محصول ۱" class="rounded">
+			      </figure>
+			      <div class="card-body text-center p-1">
+			        <h3 class="card-title">پرینتر چندکاره لیزری کانن مدل imageclass MF3010</h3>
+			        <p class="text-lg text-green-500 font-semibold">۱۴,۵۸۵,۰۰۰ تومان</p>
+			        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 card-actions justify-center mt-2">
+			          <button class="btn btn-sm btn-outline">نمایش محصول</button>
+			          <button class="btn btn-sm btn-primary">خرید</button>
+			        </div>
+			      </div>
+			    </div>
+
+			    <div class="card bg-base-100 shadow-md p-1 rounded">
+			      <figure>
+			        <img src="{% static 'img/lenovo.webp' %}" alt="محصول ۲" class="rounded">
+			      </figure>
+			      <div class="card-body text-center p-1">
+			        <h3 class="card-title">لپ تاپ 15.6 اینچی لنوو</h3>
+			        <p class="text-lg text-green-500 font-semibold">۲۲,۲۹۰,۰۰۰ تومان</p>
+			        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 card-actions justify-center mt-2">
+			          <button class="btn btn-sm btn-outline">نمایش محصول</button>
+			          <button class="btn btn-sm btn-primary">خرید</button>
+			        </div>
+			      </div>
+			    </div>
+
+			    <div class="card bg-base-100 shadow-md p-1 rounded">
+			      <figure>
+			        <img src="{% static 'img/ps5.webp' %}" alt="محصول ۳" class="rounded">
+			      </figure>
+			      <div class="card-body text-center p-1">
+			        <h3 class="card-title">PlayStation 5 Slim Digital Edition ظرفیت یک ترابایت</h3>
+			        <p class="text-lg text-green-500 font-semibold">۵۰,۵۰۰,۰۰۰ تومان</p>
+			        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 card-actions justify-center mt-2">
+			          <button class="btn btn-sm btn-outline">نمایش محصول</button>
+			          <button class="btn btn-sm btn-primary">خرید</button>
+			        </div>
+			      </div>
+			    </div>
+
+			    <div class="card bg-base-100 shadow-md p-1 rounded">
+			      <figure>
+			        <img src="{% static 'img/acer.webp' %}" alt="محصول ۴" class="rounded">
+			      </figure>
+			      <div class="card-body text-center p-1">
+			        <h3 class="card-title">لپ تاپ 16 اینچی ایسر </h3>
+			        <p class="text-lg text-green-500 font-semibold">۲۷,۸۹۹,۰۰۰ تومان</p>
+			        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 card-actions justify-center mt-2">
+			          <button class="btn btn-sm btn-outline">نمایش محصول</button>
+			          <button class="btn btn-sm btn-primary">خرید</button>
+			        </div>
+			      </div>
+			    </div>
+
+			    <div class="card bg-base-100 shadow-md p-1 rounded">
+			      <figure>
+			        <img src="{% static 'img/notebook.webp' %}" alt="محصول ۴" class="rounded">
+			      </figure>
+			      <div class="card-body text-center p-1">
+			        <h3 class="card-title">دفتر زبان 100برگ دات نوت مدل SHINY طرح LANGUAGE</h3>
+			        <p class="text-lg text-green-500 font-semibold">۲۴۹,۳۰۰ تومان</p>
+			        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 card-actions justify-center mt-2">
+			          <button class="btn btn-sm btn-outline">نمایش محصول</button>
+			          <button class="btn btn-sm btn-primary">خرید</button>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</section>
+		<!-- /topProduct -->
+
+		<!-- catPro -->
+			<div class="py-4 px-2">
+			  <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-12 gap-4 justify-items-center">
+			    
+			    <!-- دسته بندی ۱ -->
+			    <div class="relative rounded-full overflow-hidden shadow-lg group cursor-pointer w-28 h-28 sm:w-24 sm:h-24 md:w-28 md:h-28">
+			      <img src="{% static 'img/cat01.jpg' %}" alt="دسته بندی ۱" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+			      <div class="absolute inset-0 bg-opacity-40 flex items-center justify-center">
+			        <h3 class="text-white text-center font-bold drop-shadow-lg px-2">دسته بندی ۱</h3>
+			      </div>
+			    </div>
+
+			    <!-- دسته بندی ۲ -->
+			    <div class="relative rounded-full overflow-hidden shadow-lg group cursor-pointer w-28 h-28 sm:w-24 sm:h-24 md:w-28 md:h-28">
+			      <img src="{% static 'img/cat02.jpg' %}" alt="دسته بندی ۲" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+			      <div class="absolute inset-0 bg-opacity-40 flex items-center justify-center">
+			        <h3 class="text-white text-center font-bold drop-shadow-lg px-2">دسته بندی ۲</h3>
+			      </div>
+			    </div>
+
+			    <!-- دسته بندی ۳ -->
+			    <div class="relative rounded-full overflow-hidden shadow-lg group cursor-pointer w-28 h-28 sm:w-24 sm:h-24 md:w-28 md:h-28">
+			      <img src="{% static 'img/cat03.jpg' %}" alt="دسته بندی ۳" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+			      <div class="absolute inset-0 bg-opacity-40 flex items-center justify-center">
+			        <h3 class="text-white text-center font-bold drop-shadow-lg px-2">دسته بندی ۳</h3>
+			      </div>
+			    </div>
+
+			    <!-- دسته بندی ۴ -->
+			    <div class="relative rounded-full overflow-hidden shadow-lg group cursor-pointer w-28 h-28 sm:w-24 sm:h-24 md:w-28 md:h-28">
+			      <img src="{% static 'img/cat04.jpg' %}" alt="دسته بندی ۴" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+			      <div class="absolute inset-0 bg-opacity-40 flex items-center justify-center">
+			        <h3 class="text-white text-center font-bold drop-shadow-lg px-2">دسته بندی ۴</h3>
+			      </div>
+			    </div>
+
+			    <!-- دسته بندی ۵ -->
+			    <div class="relative rounded-full overflow-hidden shadow-lg group cursor-pointer w-28 h-28 sm:w-24 sm:h-24 md:w-28 md:h-28">
+			      <img src="{% static 'img/cat01.jpg' %}" alt="دسته بندی ۵" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+			      <div class="absolute inset-0 bg-opacity-40 flex items-center justify-center">
+			        <h3 class="text-white text-center font-bold drop-shadow-lg px-2">دسته بندی ۵</h3>
+			      </div>
+			    </div>
+
+			    <!-- دسته بندی ۶ -->
+			    <div class="relative rounded-full overflow-hidden shadow-lg group cursor-pointer w-28 h-28 sm:w-24 sm:h-24 md:w-28 md:h-28">
+			      <img src="{% static 'img/cat02.jpg' %}" alt="دسته بندی ۶" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+			      <div class="absolute inset-0 bg-opacity-40 flex items-center justify-center">
+			        <h3 class="text-white text-center font-bold drop-shadow-lg px-2">دسته بندی ۶</h3>
+			      </div>
+			    </div>
+
+			    <!-- دسته بندی ۷ -->
+			    <div class="relative rounded-full overflow-hidden shadow-lg group cursor-pointer w-28 h-28 sm:w-24 sm:h-24 md:w-28 md:h-28">
+			      <img src="{% static 'img/cat03.jpg' %}" alt="دسته بندی ۷" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+			      <div class="absolute inset-0 bg-opacity-40 flex items-center justify-center">
+			        <h3 class="text-white text-center font-bold drop-shadow-lg px-2">دسته بندی ۷</h3>
+			      </div>
+			    </div>
+
+			    <!-- دسته بندی ۸ -->
+			    <div class="relative rounded-full overflow-hidden shadow-lg group cursor-pointer w-28 h-28 sm:w-24 sm:h-24 md:w-28 md:h-28">
+			      <img src="{% static 'img/cat04.jpg' %}" alt="دسته بندی ۸" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+			      <div class="absolute inset-0 bg-opacity-40 flex items-center justify-center">
+			        <h3 class="text-white text-center font-bold drop-shadow-lg px-2">دسته بندی ۸</h3>
+			      </div>
+			    </div>
+
+			    <!-- دسته بندی ۹ -->
+			    <div class="relative rounded-full overflow-hidden shadow-lg group cursor-pointer w-28 h-28 sm:w-24 sm:h-24 md:w-28 md:h-28">
+			      <img src="{% static 'img/cat01.jpg' %}" alt="دسته بندی ۹" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+			      <div class="absolute inset-0 bg-opacity-40 flex items-center justify-center">
+			        <h3 class="text-white text-center font-bold drop-shadow-lg px-2">دسته بندی ۹</h3>
+			      </div>
+			    </div>
+
+			    <!-- دسته بندی ۱۰ -->
+			    <div class="relative rounded-full overflow-hidden shadow-lg group cursor-pointer w-28 h-28 sm:w-24 sm:h-24 md:w-28 md:h-28">
+			      <img src="{% static 'img/cat02.jpg' %}" alt="دسته بندی ۱۰" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+			      <div class="absolute inset-0 bg-opacity-40 flex items-center justify-center">
+			        <h3 class="text-white text-center font-bold drop-shadow-lg px-2">دسته بندی ۱۰</h3>
+			      </div>
+			    </div>
+
+			    <!-- دسته بندی ۱۱ -->
+			    <div class="relative rounded-full overflow-hidden shadow-lg group cursor-pointer w-28 h-28 sm:w-24 sm:h-24 md:w-28 md:h-28">
+			      <img src="{% static 'img/cat03.jpg' %}" alt="دسته بندی ۱۱" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+			      <div class="absolute inset-0 bg-opacity-40 flex items-center justify-center">
+			        <h3 class="text-white text-center font-bold drop-shadow-lg px-2">دسته بندی ۱۱</h3>
+			      </div>
+			    </div>
+
+			    <!-- دسته بندی ۱۲ -->
+			    <div class="relative rounded-full overflow-hidden shadow-lg group cursor-pointer w-28 h-28 sm:w-24 sm:h-24 md:w-28 md:h-28">
+			      <img src="{% static 'img/cat04.jpg' %}" alt="دسته بندی ۱۲" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+			      <div class="absolute inset-0 bg-opacity-40 flex items-center justify-center">
+			        <h3 class="text-white text-center font-bold drop-shadow-lg px-2">دسته بندی ۱۲</h3>
+			      </div>
+			    </div>
+
+			  </div>
+			</div>
+		<!-- /catPro -->
+
+
+		<!-- favBrand -->
+			<div class="container mx-auto max-w-7xl my-12 px-4 border border-gray-300 rounded-lg p-4 shadow-sm">
+			  <!-- عنوان -->
+			  <p class="text-2xl md:text-2xl font-bold text-center mb-6" style="text-align: center; color: #124e6e;">
+			  	محبوب‌ترین برندهای ما
+			  </p>
+
+			  <!-- اسلایدر -->
+			  <div class="swiper mySwiper-efe rounded-lg shadow-lg bg-white p-6">
+			    <div class="swiper-wrapper">
+				  <!-- 16 برند (با باکس مربع و لوگو وسط) -->
+				  <div class="px-4 py-1 overflow-hidden swiper-slide flex justify-center items-center h-full" style="display: flex;">
+				    <div class="flex justify-center items-center" style="width: 110px; height: 110px; line-height: 0;">
+				      <img src="{% static 'img/neterbit.png' %}" alt="Brand 1" class="w-full inline-block object-contain" width="110" height="110"/>
+				    </div>
+				  </div>
+				  <div class="px-4 py-1 overflow-hidden swiper-slide flex justify-center items-center h-full" style="display: flex;">
+				    <div class="flex justify-center items-center" style="width: 110px; height: 110px; line-height: 0;">
+				      <img src="{% static 'img/my.png' %}" alt="Brand 2" class="w-full inline-block object-contain" width="110" height="110"/>
+				    </div>
+				  </div>
+				  <div class="px-4 py-1 overflow-hidden swiper-slide flex justify-center items-center h-full" style="display: flex;">
+				    <div class="flex justify-center items-center" style="width: 110px; height: 110px; line-height: 0;">
+				      <img src="{% static 'img/xvision.jpg' %}" alt="Brand 3" class="w-full inline-block object-contain" width="110" height="110"/>
+				    </div>
+				  </div>
+				  <div class="px-4 py-1 overflow-hidden swiper-slide flex justify-center items-center h-full" style="display: flex;">
+				    <div class="flex justify-center items-center" style="width: 110px; height: 110px; line-height: 0;">
+				      <img src="{% static 'img/mi.png' %}" alt="Brand 4" class="w-full inline-block object-contain" width="110" height="110" />
+				    </div>
+				  </div>
+				  <div class="px-4 py-1 overflow-hidden swiper-slide flex justify-center items-center h-full" style="display: flex;">
+				    <div class="flex justify-center items-center" style="width: 110px; height: 110px; line-height: 0;">
+				      <img src="{% static 'img/sam.jpg' %}" alt="Brand 5" class="w-full inline-block object-contain" width="110" height="110"/>
+				    </div>
+				  </div>
+				  <div class="px-4 py-1 overflow-hidden swiper-slide flex justify-center items-center h-full" style="display: flex;">
+				    <div class="flex justify-center items-center" style="width: 110px; height: 110px; line-height: 0;">
+				      <img src="{% static 'img/panter.jpg' %}" alt="Brand 6" class="w-full inline-block object-contain" width="110" height="110"/>
+				    </div>
+				  </div>
+				  <div class="px-4 py-1 overflow-hidden swiper-slide flex justify-center items-center h-full" style="display: flex;">
+				    <div class="flex justify-center items-center" style="width: 110px; height: 110px; line-height: 0;">
+				      <img src="{% static 'img/vital.jpg' %}" alt="Brand 7" class="w-full inline-block object-contain" width="110" height="110"/>
+				    </div>
+				  </div>
+				  <div class="px-4 py-1 overflow-hidden swiper-slide flex justify-center items-center h-full" style="display: flex;">
+				    <div class="flex justify-center items-center" style="width: 110px; height: 110px; line-height: 0;">
+				      <img src="{% static 'img/huawei.png' %}" alt="Brand 8" class="w-full inline-block object-contain" width="110" height="110"/>
+				    </div>
+				  </div>
+				  <div class="px-4 py-1 overflow-hidden swiper-slide flex justify-center items-center h-full" style="display: flex;">
+				    <div class="flex justify-center items-center" style="width: 110px; height: 110px; line-height: 0;">
+				      <img src="{% static 'img/neterbit.png' %}" alt="Brand 9" class="w-full inline-block object-contain" width="110" height="110"/>
+				    </div>
+				  </div>
+				  <div class="px-4 py-1 overflow-hidden swiper-slide flex justify-center items-center h-full" style="display: flex;">
+				    <div class="flex justify-center items-center" style="width: 110px; height: 110px; line-height: 0;">
+				      <img src="{% static 'img/my.png' %}" alt="Brand 10" class="w-full inline-block object-contain" width="110" height="110"/>
+				    </div>
+				  </div>
+				  <div class="px-4 py-1 overflow-hidden swiper-slide flex justify-center items-center h-full" style="display: flex;">
+				    <div class="flex justify-center items-center" style="width: 110px; height: 110px; line-height: 0;">
+				      <img src="{% static 'img/xvision.jpg' %}" alt="Brand 11" class="w-full inline-block object-contain" width="110" height="110"/>
+				    </div>
+				  </div>
+				  <div class="px-4 py-1 overflow-hidden swiper-slide flex justify-center items-center h-full" style="display: flex;">
+				    <div class="flex justify-center items-center" style="width: 110px; height: 110px; line-height: 0;">
+				      <img src="{% static 'img/mi.png' %}" alt="Brand 12" class="w-full inline-block object-contain" width="110" height="110"/>
+				    </div>
+				  </div>
+				  <div class="px-4 py-1 overflow-hidden swiper-slide flex justify-center items-center h-full" style="display: flex;">
+				    <div class="flex justify-center items-center" style="width: 110px; height: 110px; line-height: 0;">
+				      <img src="{% static 'img/sam.jpg' %}" alt="Brand 13" class="w-full inline-block object-contain" width="110" height="110"/>
+				    </div>
+				  </div>
+				  <div class="px-4 py-1 overflow-hidden swiper-slide flex justify-center items-center h-full" style="display: flex;">
+				    <div class="flex justify-center items-center" style="width: 110px; height: 110px; line-height: 0;">
+				      <img src="{% static 'img/panter.jpg' %}" alt="Brand 14" class="w-full inline-block object-contain" width="110" height="110"/>
+				    </div>
+				  </div>
+				  <div class="px-4 py-1 overflow-hidden swiper-slide flex justify-center items-center h-full" style="display: flex;">
+				    <div class="flex justify-center items-center" style="width: 110px; height: 110px; line-height: 0;">
+				      <img src="{% static 'img/vital.jpg' %}" alt="Brand 15" class="w-full inline-block object-contain" width="110" height="110"/>
+				    </div>
+				  </div>
+				  <div class="px-4 py-1 overflow-hidden swiper-slide flex justify-center items-center h-full" style="display: flex;">
+				    <div class="flex justify-center items-center" style="width: 110px; height: 110px; line-height: 0;">
+				      <img src="{% static 'img/huawei.png' %}" alt="Brand 16" class="w-full inline-block object-contain" width="110" height="110"/>
+				    </div>
+				  </div>
+				</div>
+
+			    <!-- دکمه‌های قبلی و بعدی -->
+			    <div class="btn btn-circle absolute text-gray-800 hover:text-gray-600 z-10 next-btn-brands">>></div>
+			    <div class="btn btn-circle absolute text-gray-800 hover:text-gray-600 z-10 prev-btn-brands"><<</div>
+			  </div>
+			</div>
+
+			<script>
+			  const swiper = new Swiper(".mySwiper-efe", {
+			    slidesPerView: 8,
+			    spaceBetween: 20,
+			    loop: true,
+			    navigation: {
+			      nextEl: ".next-btn-brands",
+			      prevEl: ".prev-btn-brands",
+			    },
+			    breakpoints: {
+			      0: { slidesPerView: 3 },
+			      640: { slidesPerView: 4 },
+			      768: { slidesPerView: 6 },
+			      1024: { slidesPerView: 8 },
+			    },
+			  });
+			</script>
+		<!-- /favBrand -->
+
+
+		<!-- blog -->
+			<section class="my-16 px-4 bg-gradient-to-tr from-blue-500 to-blue-900 py-5">
+			  <!-- نوار بالا -->
+			  <div class="flex justify-between items-center mb-8">
+			    <h2 class="text-2xl font-bold text-white">بلاگ‌های پر بازدید</h2>
+			    <a href="/blog" class="text-white hover:text-gray-300 transition-colors font-medium">بلاگ‌های بیشتر</a>
+			  </div>
+
+			  <!-- کارت‌ها -->
+			  <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2">
+			    
+			    <!-- کارت بلاگ -->
+			    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-shadow duration-300 group">
+			      <div class="overflow-hidden">
+			        <img src="{% static 'img/controler.png' %}" alt="تیتر بلاگ 1" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
+			      </div>
+			      <div class="p-2">
+			        <h3 class="text-lg font-semibold text-gray-800 mb-2">تیتر بلاگ ۱</h3>
+			        <p class="text-gray-600 line-clamp-2 mb-4">
+			          لورم ایپسوم متن آزمایشی است که برای پر کردن فضا استفاده می‌شود. این متن طولانی‌تر است تا بتوانیم محدودیت خط را تست کنیم و ببینیم سه نقطه اضافه می‌شود یا خیر.
+			        </p>
+			        <a href="/blog/blog1" class="inline-block w-full text-center py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300" style="text-align: center;">
+			          ادامه مطلب
+			        </a>
+			      </div>
+			    </div>
+
+			    <!-- کارت بلاگ ۲ -->
+			    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-shadow duration-300 group">
+			      <div class="overflow-hidden">
+			        <img src="{% static 'img/controler.png' %}" alt="تیتر بلاگ 2" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
+			      </div>
+			      <div class="p-2">
+			        <h3 class="text-lg font-semibold text-gray-800 mb-2">تیتر بلاگ ۲</h3>
+			        <p class="text-gray-600 line-clamp-3 mb-4">
+			          لورم ایپسوم متن آزمایشی برای پیش‌نمایش خلاصه بلاگ که طولانی است و باید سه نقطه اضافه شود.
+			        </p>
+			        <a href="/blog/blog2" class="inline-block w-full text-center py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300" style="text-align: center;">
+			          ادامه مطلب
+			        </a>
+			      </div>
+			    </div>
+
+			    <!-- کارت بلاگ ۳ -->
+			    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-shadow duration-300 group">
+			      <div class="overflow-hidden">
+			        <img src="{% static 'img/controler.png' %}" alt="تیتر بلاگ 3" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
+			      </div>
+			      <div class="p-2">
+			        <h3 class="text-lg font-semibold text-gray-800 mb-2">تیتر بلاگ ۳</h3>
+			        <p class="text-gray-600 line-clamp-2 mb-4">
+			          لورم ایپسوم متن آزمایشی است که برای پر کردن فضا استفاده می‌شود. این متن طولانی‌تر است تا بتوانیم محدودیت خط را تست کنیم و ببینیم سه نقطه اضافه می‌شود یا خیر.
+			        </p>
+			        <a href="/blog/blog3" class="inline-block w-full text-center py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300" style="text-align: center;">
+			          ادامه مطلب
+			        </a>
+			      </div>
+			    </div>
+
+			    <!-- کارت بلاگ ۴ -->
+			    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-shadow duration-300 group">
+			      <div class="overflow-hidden">
+			        <img src="{% static 'img/controler.png' %}" alt="تیتر بلاگ 4" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
+			      </div>
+			      <div class="p-2">
+			        <h3 class="text-lg font-semibold text-gray-800 mb-2">تیتر بلاگ ۴</h3>
+			        <p class="text-gray-600 line-clamp-2 mb-4">
+			          لورم ایپسوم متن آزمایشی است که برای پر کردن فضا استفاده می‌شود. این متن طولانی‌تر است تا بتوانیم محدودیت خط را تست کنیم و ببینیم سه نقطه اضافه می‌شود یا خیر.
+			        </p>
+			        <a href="/blog/blog4" class="inline-block w-full text-center py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300" style="text-align: center;">
+			          ادامه مطلب
+			        </a>
+			      </div>
+			    </div>
+
+			  </div>
+			</section>
+		<!-- /blog -->
+	{% endblock %}
