@@ -85,24 +85,9 @@
 			      <li class="dropdown dropdown-hover relative">
 					  <a tabindex="0" class="cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M4 3C3.44772 3 3 3.44772 3 4V20C3 20.5523 3.44772 21 4 21H14C14.5523 21 15 20.5523 15 20V15.2973L15.9995 19.9996C16.1143 20.5398 16.6454 20.8847 17.1856 20.7699L21.0982 19.9382C21.6384 19.8234 21.9832 19.2924 21.8684 18.7522L18.9576 5.0581C18.8428 4.51788 18.3118 4.17304 17.7716 4.28786L14.9927 4.87853C14.9328 4.38353 14.5112 4 14 4H10C10 3.44772 9.55228 3 9 3H4ZM10 6H13V14H10V6ZM10 19V16H13V19H10ZM8 5V15H5V5H8ZM8 17V19H5V17H8ZM17.3321 16.6496L19.2884 16.2338L19.7042 18.1898L17.7479 18.6057L17.3321 16.6496ZM16.9163 14.6933L15.253 6.86789L17.2092 6.45207L18.8726 14.2775L16.9163 14.6933Z"></path></svg>دسته بندی</a>
 					  <ul tabindex="0" class="dropdown-content text-blue-900 menu p-4 shadow bg-base-100 rounded grid grid-cols-3 gap-2 w-[500px] top-7 mr-1">
-					    <li><a href="#">زیرمنو ۱</a></li>
-					    <li><a href="#">زیرمنو ۲</a></li>
-					    <li><a href="#">زیرمنو ۳</a></li>
-					    <li><a href="#">زیرمنو ۴</a></li>
-					    <li><a href="#">زیرمنو ۵</a></li>
-					    <li><a href="#">زیرمنو ۶</a></li>
-					    <li><a href="#">زیرمنو ۷</a></li>
-					    <li><a href="#">زیرمنو ۸</a></li>
-					    <li><a href="#">زیرمنو ۹</a></li>
-					    <li><a href="#">زیرمنو ۱۰</a></li>
-					    <li><a href="#">زیرمنو ۱۱</a></li>
-					    <li><a href="#">زیرمنو ۱۲</a></li>
-					    <li><a href="#">زیرمنو ۱۳</a></li>
-					    <li><a href="#">زیرمنو ۱۴</a></li>
-					    <li><a href="#">زیرمنو ۱۵</a></li>
-					    <li><a href="#">زیرمنو ۱۶</a></li>
-					    <li><a href="#">زیرمنو ۱۷</a></li>
-					    <li><a href="#">زیرمنو ۱۸</a></li>
+					  	{% for category in categories %}
+						    <li><a href="{% url 'category_detail' category.slug %}">{{ category.name }}</a></li>
+						{% endfor %}
 					  </ul>
 					</li>
 			      <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M21 8V20.9932C21 21.5501 20.5552 22 20.0066 22H3.9934C3.44495 22 3 21.556 3 21.0082V2.9918C3 2.45531 3.4487 2 4.00221 2H14.9968L21 8ZM19 9H14V4H5V20H19V9ZM8 7H11V9H8V7ZM8 11H16V13H8V11ZM8 15H16V17H8V15Z"></path></svg>درباره ما</a></li>
@@ -139,24 +124,9 @@
 			        <details>
 			          <summary><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M4 3C3.44772 3 3 3.44772 3 4V20C3 20.5523 3.44772 21 4 21H14C14.5523 21 15 20.5523 15 20V15.2973L15.9995 19.9996C16.1143 20.5398 16.6454 20.8847 17.1856 20.7699L21.0982 19.9382C21.6384 19.8234 21.9832 19.2924 21.8684 18.7522L18.9576 5.0581C18.8428 4.51788 18.3118 4.17304 17.7716 4.28786L14.9927 4.87853C14.9328 4.38353 14.5112 4 14 4H10C10 3.44772 9.55228 3 9 3H4ZM10 6H13V14H10V6ZM10 19V16H13V19H10ZM8 5V15H5V5H8ZM8 17V19H5V17H8ZM17.3321 16.6496L19.2884 16.2338L19.7042 18.1898L17.7479 18.6057L17.3321 16.6496ZM16.9163 14.6933L15.253 6.86789L17.2092 6.45207L18.8726 14.2775L16.9163 14.6933Z"></path></svg>دسته بندی</summary>
 			          <ul class="bg-base-100 rounded-t-none p-2">
-			            <li><a href="#">زیرمنو ۱</a></li>
-					    <li><a href="#">زیرمنو ۲</a></li>
-					    <li><a href="#">زیرمنو ۳</a></li>
-					    <li><a href="#">زیرمنو ۴</a></li>
-					    <li><a href="#">زیرمنو ۵</a></li>
-					    <li><a href="#">زیرمنو ۶</a></li>
-					    <li><a href="#">زیرمنو ۷</a></li>
-					    <li><a href="#">زیرمنو ۸</a></li>
-					    <li><a href="#">زیرمنو ۹</a></li>
-					    <li><a href="#">زیرمنو ۱۰</a></li>
-					    <li><a href="#">زیرمنو ۱۱</a></li>
-					    <li><a href="#">زیرمنو ۱۲</a></li>
-					    <li><a href="#">زیرمنو ۱۳</a></li>
-					    <li><a href="#">زیرمنو ۱۴</a></li>
-					    <li><a href="#">زیرمنو ۱۵</a></li>
-					    <li><a href="#">زیرمنو ۱۶</a></li>
-					    <li><a href="#">زیرمنو ۱۷</a></li>
-					    <li><a href="#">زیرمنو ۱۸</a></li>
+			            {% for category in categories %}
+						    <li><a href="{% url 'category_detail' category.slug %}">{{ category.name }}</a></li>
+						{% endfor %}
 			          </ul>
 			        </details>
 			      </li>
