@@ -1,6 +1,6 @@
 from django.contrib import admin
 from jalali_date.admin import ModelAdminJalaliMixin
-from .models import Category, Slider, Brand, Product, Blog
+from .models import Category, Slider, Brand, Product, Blog, About
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
@@ -27,3 +27,7 @@ class ProductAdmin(admin.ModelAdmin):
 class BlogAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
     list_display = ('title', 'author', 'created_at')
     prepopulated_fields = {'slug': ('title',)}
+
+@admin.register(About)
+class AboutAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
+    list_display = ('manager', 'job')

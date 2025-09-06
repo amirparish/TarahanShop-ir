@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
-from .models import Category, Slider, Brand, Product, Blog
+from .models import Category, Slider, Brand, Product, Blog, About
 # SiteBase
 
 def index(request):
@@ -109,3 +109,10 @@ def blog_detail(request, slug):
 #     return render(request, 'index.html', {
 #         'sliders': sliders,
 # })
+
+def about_detail(request):
+    members = About.objects.all()
+    context = {
+        'members': members,
+    }
+    return render(request, 'about-us.html', context)

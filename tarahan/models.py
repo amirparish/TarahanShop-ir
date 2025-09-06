@@ -64,6 +64,8 @@ class Product(models.Model):
 
     class Meta:
         ordering = ["-created_at"]
+        verbose_name = "محصولات"
+        verbose_name_plural = "محصولات"
 
     def get_features_list(self):
         """لیست ویژگی‌ها به صورت array"""
@@ -96,6 +98,15 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.title
+
+class About(models.Model):
+    manager = models.CharField(max_length=220, verbose_name="نام همکاری")
+    image = models.ImageField(upload_to="manager/", verbose_name="تصویر همکار")
+    job = models.CharField(max_length=220, verbose_name="فیلد کاری")
+
+    class Meta:
+        verbose_name = "همکاران"
+        verbose_name_plural = "همکاران"
 
 
 
