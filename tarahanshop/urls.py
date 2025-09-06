@@ -25,7 +25,11 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('category/<slug:slug>/', views.category_detail, name='category_detail')
+    path('category/<slug:slug>/', views.category_detail, name='category_detail'),
+    path('products/', views.product_list, name='product_list'),
+    path('products/<slug:slug>/', views.product_detail, name='product_detail'),
+    path('blogs/', views.blog_list, name='blog_list'),
+    path('blogs/<slug:slug>/', views.blog_detail, name='blog_detail'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
