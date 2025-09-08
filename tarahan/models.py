@@ -3,7 +3,7 @@ from django.utils.text import slugify
 from django.utils import timezone
 
 class Category(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, verbose_name="نام دسته بندی")
     slug = models.SlugField(unique=True, blank=True)
     image = models.ImageField(upload_to='categories/')
     order = models.PositiveIntegerField(default=0)
@@ -19,6 +19,10 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = "دسته بندی"
+        verbose_name_plural = "دسته بندی"
+
 
 class Slider(models.Model):
     title = models.CharField(max_length=200, blank=True, null=True)
@@ -31,6 +35,10 @@ class Slider(models.Model):
     def __str__(self):
         return self.title if self.title else f"Slider {self.id}"
 
+    class Meta:
+        verbose_name = "اسلایدر"
+        verbose_name_plural = "اسلایدر"
+
 
 class Brand(models.Model):
     name = models.CharField(max_length=100)
@@ -38,6 +46,10 @@ class Brand(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = "برندها"
+        verbose_name_plural = "برندها"
 
 
 class Product(models.Model):
@@ -52,8 +64,8 @@ class Product(models.Model):
     image = models.ImageField(upload_to="products/", blank=True, null=True)
     description = models.TextField(blank=True)
     price = models.DecimalField(max_digits=12, decimal_places=0)
-    is_amazing = models.BooleanField(default=False)
-    is_featured = models.BooleanField(default=False)
+    is_amazing = models.BooleanField(default=False, verbose_name="شگفت انگیز")
+    is_featured = models.BooleanField(default=False, verbose_name="پیشنهادی")
     created_at = models.DateTimeField(auto_now_add=True)
 
     features = models.TextField(

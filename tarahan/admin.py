@@ -5,6 +5,7 @@ from .models import Category, Slider, Brand, Product, Blog, About
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'order', 'slug')
+    list_filter = ('name',)
     prepopulated_fields = {'slug': ('name',)}
 
 @admin.register(Slider)
@@ -26,6 +27,8 @@ class ProductAdmin(admin.ModelAdmin):
 @admin.register(Blog)
 class BlogAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
     list_display = ('title', 'author', 'created_at')
+    list_filter = ('author', 'created_at')
+    search_fields = ('title', 'author')
     prepopulated_fields = {'slug': ('title',)}
 
 @admin.register(About)

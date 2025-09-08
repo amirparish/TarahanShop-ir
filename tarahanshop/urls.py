@@ -31,6 +31,7 @@ urlpatterns = [
     path('blogs/', views.blog_list, name='blog_list'),
     path('blogs/<slug:slug>/', views.blog_detail, name='blog_detail'),
     path('about/', views.about_detail, name='about_detail'),
+    path('call/', views.call_detail, name='call_detail'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

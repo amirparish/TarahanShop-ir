@@ -116,3 +116,6 @@ def about_detail(request):
         'members': members,
     }
     return render(request, 'about-us.html', context)
+
+def call_detail(request):
+    return render(request, 'call-us.html')
