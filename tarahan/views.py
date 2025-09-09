@@ -36,8 +36,12 @@ def category_detail(request, slug):
     return render(request, 'category_detail.html', context)
 
 def product_list(request):
+    query = request.GET.get('q')
     products = Product.objects.all()
     featured_products = Product.objects.filter(is_featured=True).order_by('-id')[:8]
+
+    if query:
+        products = products.filter(name__icontains=query)
 
     paginator = Paginator(products, 9)
     page_number = request.GET.get('page')
@@ -49,6 +53,7 @@ def product_list(request):
         'page_obj': page_obj,
         'first_pages': first_pages,
         'featured_products': featured_products,
+        'query': query,
     }
     return render(request, 'product-list.html', context)
 
